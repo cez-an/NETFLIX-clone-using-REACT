@@ -9,7 +9,7 @@ type button = {
 const Button = (props: button) => {
   return (
     <>
-      <button className={`${props.class} ${props.color} py-2 px-7`}> {`${props.name}`}{props.icon}  </button>
+      <button className={`${props.class} ${props.color} flex items-center justify-center gap-3`}> {`${props.name}`}{props.icon}  </button>
     </>
   );
 };
