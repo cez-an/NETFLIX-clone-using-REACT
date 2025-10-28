@@ -11,7 +11,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-linear-to-b from-black/75 via-black/70 to-black/90"></div>
 
         <div className="z-10 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-2 md:mb-8 font-netflix">
+          <h1 className="font text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-2 md:mb-8 font-netflix">
             Unlimited movies, TV <span className="block">shows and more</span>
           </h1>
 
