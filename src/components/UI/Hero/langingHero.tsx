@@ -1,11 +1,11 @@
 import { FaArrowRight } from "react-icons/fa";
 import Button from "../Button/Button";
 
-const Hero = () => {
+const LangingHero = () => {
   return (
     <div className="w-full text-white">
       <section
-        className="relative h-screen flex flex-col items-center justify-center bg-center bg-cover"
+        className="relative w-full h-screen flex flex-col items-center justify-center bg-center bg-cover bg-no-repeat m-0 p-0"
         style={{ backgroundImage: "url('/image/10005.jpg')" }}
       >
         <div className="absolute inset-0 bg-linear-to-b from-black/75 via-black/70 to-black/90"></div>
@@ -42,4 +42,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default LangingHero;

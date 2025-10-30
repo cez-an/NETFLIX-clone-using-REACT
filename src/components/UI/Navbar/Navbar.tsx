@@ -1,5 +1,4 @@
 import { HiMiniLanguage } from "react-icons/hi2";
-import "./Navbar.css";
 import logo from "/icons/icon.png";
 import Button from "../Button/Button";
 
@@ -21,7 +20,7 @@ const Navbar = () => {
             className="outline-none text-center cursor-pointer bg-transparent 
                        sm:appearance-auto sm:w-auto w-4 sm:text-white text-transparent "
           >
-            <option className="text-black px-3 textred" value="en" selected>
+            <option className="text-black px-3 textred" value="en" >
               {"English"}
             </option>
             <option className="text-black px-3" value="hi">
