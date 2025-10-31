@@ -5,12 +5,26 @@ import notification_icon from "/assets/bell_icon.svg";
 
 import profile_icon from "/assets/profile_img.png";
 import dropdown_icon from "/assets/caret_icon.svg";
+import { useEffect, useRef } from "react";
 
 // import Button from "../Button/Button";
 
 const Navbar2 = () => {
+
+  const navRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(()=>{
+    window.addEventListener('scroll',()=>{
+      if(window.scrollY >= 80){
+        navRef.current?.classList.add('bg-black/90')
+      }else{
+        navRef.current?.classList.remove('bg-black/90')
+      }
+    })
+  },[])
+
   return (
-    <div className="absolute w-full z-50 px-[4%] py-1.5 flex items-center justify-between bg-linear-to-b from-black/80 to-transparent ">
+    <div ref={navRef} className="fixed w-full z-50 px-[4%] py-1.5 flex items-center justify-between bg-linear-to-b from-black/80 to-transparent ">
       <div className="flex items-center gap-5">
         <img src={logo} className="w-30 sm:w-40 md:w-50" alt="logo" />
         <ul className="flex gap-5 cursor-pointer">

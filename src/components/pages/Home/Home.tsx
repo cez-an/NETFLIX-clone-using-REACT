@@ -9,10 +9,10 @@ const Home = () => {
       <Navbar2 />
 
       <Hero />
-      <TitleCards title="Blockbuster Movies" />
-      <TitleCards title="Only on Netflix" />
-      <TitleCards title="Upcomming" />
-      <TitleCards title="Top picks for You" />
+      <TitleCards title="Top picks for You" category="popular" />
+      <TitleCards title="Upcomming" category="upcoming"/>
+      <TitleCards title="Blockbuster Movies" category="now_playing" />
+      <TitleCards title="Only on Netflix" category="top_rated"/>
       <Footer />
     </>
   );
