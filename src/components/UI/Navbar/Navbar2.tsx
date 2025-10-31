@@ -6,6 +6,7 @@ import notification_icon from "/assets/bell_icon.svg";
 import profile_icon from "/assets/profile_img.png";
 import dropdown_icon from "/assets/caret_icon.svg";
 import { useEffect, useRef } from "react";
+import { logout } from "../../../firebase";
 
 // import Button from "../Button/Button";
 
@@ -51,7 +52,7 @@ const Navbar2 = () => {
 
           <div className="absolute invisible top-[130%] right-0 bg-[#191919] p-2 rounded z-10 transition-all duration-300 
                    hover:bg-red-700 hover:scale-105 group-hover:visible" >
-            <p>Sign Out of Netflix</p>
+            <p onClick={()=>{logout()}}>Sign Out of Netflix</p>
           </div>
 
         </div>

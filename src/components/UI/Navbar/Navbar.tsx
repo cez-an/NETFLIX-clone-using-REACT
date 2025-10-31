@@ -1,6 +1,7 @@
 import { HiMiniLanguage } from "react-icons/hi2";
 import logo from "/icons/icon.png";
 import Button from "../Button/Button";
+import { Navigate } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -29,7 +30,7 @@ const Navbar = () => {
           </select>
         </div>
 
-        <Button name="Sign In" color="bg-red-600" class="rounded px-2" />
+        <Button fun={Navigate('/login')} name="Sign In" color="bg-red-600" class="rounded px-2" />
       </div>
     </div>
   );
