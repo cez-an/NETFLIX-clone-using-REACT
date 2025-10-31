@@ -13,14 +13,16 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
 export const auth = getAuth(app);
-export const db = getFirestore();
+
+export const db = getFirestore(app);
 
 export const signup = async (name: string, email: string, password: string) => {
   try {
     const res = await createUserWithEmailAndPassword(auth,email,password)
     const user = res.user;
-    await addDoc(collection(db,'user'),{
+    await addDoc(collection(db,'users'),{
       uid:user.uid,
       name,
       authProvider:'local',
@@ -28,14 +30,16 @@ export const signup = async (name: string, email: string, password: string) => {
     })
   } catch (error) {
     console.log(error)
+    alert(error);
   }
 };
 
-export const login = async (emial:string,password:string)=>{
+export const login = async (email:string,password:string)=>{
   try {
-   await signInWithEmailAndPassword(auth,emial,password);
+   await signInWithEmailAndPassword(auth,email,password);
   } catch (error) {
-    
+    console.log(error);
+    alert(error);
   }
 }
 

@@ -1,24 +1,21 @@
 import React, { useState } from "react";
-import { signup, login } from "/src/firebase.ts";
+import { signup, login } from "../../../firebase";
 
 const SignUp = () => {
+
   const [signState, setSignState] = useState("Sign Up");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  let userAuth = async (event:React.FormEvent<HTMLFormElement>) => {
+  let userAuth = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if(signState === 'Sign Up'){
-      signup(name,email,password);
-    }else{
-      login(email,password);
+    if (signState === "Sign Up") {
+      signup(name, email, password);
+    } else {
+      login(email, password);
     }
   };
-
-  console.log(name);
-  console.log(email);
-  console.log(password);
 
   return (
     <>
@@ -34,7 +31,7 @@ const SignUp = () => {
         <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/60 to-black/60"></div>
         <div className=" bg-black/65 z-10 p-10">
           <h1 className="text-3xl py-10">{signState}</h1>
-          <form>
+          <form onSubmit={userAuth}>
             <div className="flex flex-col items-center justify-center gap-8">
               {signState === "Sign Up" ? (
                 <input
@@ -61,9 +58,11 @@ const SignUp = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button onClick={userAuth} type="submit" className="bg-red-600 rounded py-4 w-full">
-                {" "}
-                Sign Up
+              <button
+                type="submit"
+                className="bg-red-600 font-bold rounded py-4 w-full cursor-pointer"
+              >
+                {signState === "Sign Up" ? "Sign Up" : "login"}
               </button>
 
               <div className=" text-gray-400 flex items-center justify-between w-full">
@@ -88,11 +87,11 @@ const SignUp = () => {
             </h1>
           ) : (
             <h1
-              className="text-md text-center mt-15 text-gray-400"
+              className="text-md text-center mt-15 text-gray-400 cursor-pointer"
               onClick={() => setSignState("Login")}
             >
               Already have Account?
-              <span className="text-white font-bold"> Sign In Now</span>
+              <span className="text-white font-bold"> Login Now</span>
             </h1>
           )}
         </div>

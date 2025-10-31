@@ -1,9 +1,12 @@
 import { HiMiniLanguage } from "react-icons/hi2";
 import logo from "/icons/icon.png";
 import Button from "../Button/Button";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  
+  const navigate = useNavigate();
+
   return (
     <div className="fixed w-full z-50 px-[4%] md:px-[8%] lg:px-[12%] xl:px-[18%] py-1.5 flex items-center justify-between ">
       <div>
@@ -21,7 +24,7 @@ const Navbar = () => {
             className="outline-none text-center cursor-pointer bg-transparent 
                        sm:appearance-auto sm:w-auto w-4 sm:text-white text-transparent "
           >
-            <option className="text-black px-3 textred" value="en" >
+            <option className="text-black px-3 textred" value="en">
               {"English"}
             </option>
             <option className="text-black px-3" value="hi">
@@ -30,7 +33,7 @@ const Navbar = () => {
           </select>
         </div>
 
-        <Button fun={Navigate('/login')} name="Sign In" color="bg-red-600" class="rounded px-2" />
+        <Button name="Sign In" color="bg-red-600" class="rounded px-2" />
       </div>
     </div>
   );

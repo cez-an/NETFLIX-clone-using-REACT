@@ -18,10 +18,10 @@ function App() {
     onAuthStateChanged(auth,async (user)=>{
       if(user){
         console.log('Logged in');
-        navigate('/');
+        navigate('/home');
       }else{
         console.log('Logged Out');
-        navigate('/login');
+        navigate('/signup');
       }
     })
   },[])
