@@ -1,11 +1,11 @@
 import { HiMiniLanguage } from "react-icons/hi2";
 import logo from "/icons/icon.png";
 import Button from "../Button/Button";
-import { Navigate, useNavigate } from "react-router-dom";
+// import { Navigate, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div className="fixed w-full z-50 px-[4%] md:px-[8%] lg:px-[12%] xl:px-[18%] py-1.5 flex items-center justify-between ">
